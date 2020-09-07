@@ -23,13 +23,13 @@ client.on('message', message => {
     } else if (command === 'help') {
         message.delete();
 
-        var M2002 = new Discord.MessageEmbed()
+        var E1952 = new Discord.MessageEmbed()
             .setTitle('Commands:')
             .addField("[Command1]", "Beschrijving van command1")
             .addField("[Command2]", "Beschrijving van command2");
 
 
-        message.channel.send(M2002)
+        message.channel.send(E1952)
             .then(msg => {
                 msg.delete({ timeout: 12000 })
             })
