@@ -32,7 +32,7 @@ client.on('message', message => {
         message.channel.send(E1952)
             .then(msg => {
                 msg.delete({ timeout: 12000 })
-            })
+            });
     }
 });
 
