@@ -1,0 +1,24 @@
+{
+  "name": "template-bot",
+  "version": "1.0.0",
+  "description": "template bot ",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "node": "^14.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrickierBroom8/Template-Bot.git"
+  },
+  "author": "Oscar.#7370",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TrickierBroom8/Template-Bot/issues"
+  },
+  "homepage": "https://github.com/TrickierBroom8/Template-Bot#readme"
+}
