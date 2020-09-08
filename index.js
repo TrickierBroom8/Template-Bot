@@ -6,6 +6,8 @@ const config = require('./config.json')
 
 const prefix = config.prefix
 
+if (config.token === 'HIER-JOUW-TOKEN') return console.log('De bot heeft geen geldige token\nVerander deze naar jouw eigen token');
+
 client.once('ready', () => {
     console.log('Deze bot is nu online')
 
