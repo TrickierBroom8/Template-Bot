@@ -3,7 +3,8 @@ const Discord = require('discord.js')
 
 const client = new Discord.Client();
 
-const config = require('./config.json')
+const config = require('./config.json') // Als je iets toe wilt voegen in de config, ga dan naar de config.json 
+// en zet een , na het onderste stukje tussen de haakjes{}.. "NAAM": "WAT HET IS BIJV TRUE"
 
 const prefix = config.prefix
 
@@ -13,7 +14,7 @@ if (prefix === 'HIER-JOUW-PREFIX') return console.log('Verander de prefix naar j
 
 client.once('ready', () => {
     console.log('Deze bot is nu online')
-// Verander hier onder tussen de haakjes wat je de status van de bot wilt zijn.
+// Verander hieronder bij 'Deze bot' wat je de status van de bot wilt zijn, WATCHING staat voor kijkt naar.. je zou ook LISTENING kunnen gebruiken.
     client.user.setActivity('Deze bot', { type: "WATCHING" })
 });
 
@@ -28,17 +29,24 @@ client.on('message', message => {
     if (command === 'ping') {
         message.channel.send('pong!');
 
+        // Dit command doet niet veel.. is meer een test.. je kan ping veranderen in een ander command 
+        // en dan het bericht hierboven verwijderen en je eigen code invoegen
+
     } else if (command === 'help') {
         message.delete();
 
         var E1952 = new Discord.MessageEmbed()
             .setTitle('Commands:')
             .addField("[Command1]", "Beschrijving van command1")
-            .addField("[Command2]", "Beschrijving van command2");
+            .addField("[Command2]", "Beschrijving van command2")
+
+            // Als je een extra veld wilt toevoegen plak dit dan hierboven^^ .addField('', '')
 
 
         message.channel.send(E1952)
             .then(msg => {
+                // Dit bepaald na hoeveel seconden dit bericht word verwijderd.. in dit geval 12.. 
+                // Als je dit wilt uitschakellen verwijder dan van .then tot en met });
                 msg.delete({ timeout: 12000 })
             });
     }
