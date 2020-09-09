@@ -8,6 +8,8 @@ const config = require('./config.json') /* Als je iets toe wilt voegen in de con
 
 const prefix = config.prefix
 
+if (config.token === 'HIER-JOUW-TOKEN' && prefix === 'HIER-JOUW-PREFIX') return console.log('De bot heeft geen geldige token en prefix\nVerander deze beide naar jouw eigen token en prefix');
+
 if (config.token === 'HIER-JOUW-TOKEN') return console.log('De bot heeft geen geldige token\nVerander deze naar jouw eigen token');
 
 if (prefix === 'HIER-JOUW-PREFIX') return console.log('Verander de prefix naar jouw eigen prefix.');
