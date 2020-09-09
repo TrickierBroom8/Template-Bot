@@ -3,8 +3,8 @@ const Discord = require('discord.js')
 
 const client = new Discord.Client();
 
-const config = require('./config.json') // Als je iets toe wilt voegen in de config, ga dan naar de config.json 
-// en zet een , na het onderste stukje tussen de haakjes{}.. "NAAM": "WAT HET IS BIJV TRUE"
+const config = require('./config.json') /* Als je iets toe wilt voegen in de config, ga dan naar de config.json 
+ en zet een , na het onderste stukje tussen de haakjes{}.. "NAAM": "WAT HET IS BIJV TRUE" */
 
 const prefix = config.prefix
 
@@ -23,14 +23,14 @@ client.on('message', message => {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
 
-// Je kan hieronder commands toevoegen door na de } else if (command === 'NAAM') { Codering } te gebruiken.
-// Voor hulp contacteer: Oscar.#7370
+/* Je kan hieronder commands toevoegen door na de } else if (command === 'NAAM') { Codering } te gebruiken.
+   Voor hulp contacteer: Oscar.#7370 */
 
-    if (command === 'ping') {
-        message.channel.send('pong!');
+    if  (command === 'ping') { 
+        message.channel.send('pong!'); 
 
-        // Dit command doet niet veel.. is meer een test.. je kan ping veranderen in een ander command 
-        // en dan het bericht hierboven verwijderen en je eigen code invoegen
+        /* Dit command doet niet veel.. is meer een test.. je kan ping veranderen in een ander command 
+           en dan het bericht hierboven verwijderen en je eigen code invoegen */
 
     } else if (command === 'help') {
         message.delete();
@@ -45,8 +45,8 @@ client.on('message', message => {
 
         message.channel.send(E1952)
             .then(msg => {
-                // Dit bepaald na hoeveel seconden dit bericht word verwijderd.. in dit geval 12.. 
-                // Als je dit wilt uitschakellen verwijder dan van .then tot en met });
+                /* Dit bepaald na hoeveel seconden dit bericht word verwijderd.. in dit geval 12.. 
+                   Als je dit wilt uitschakellen verwijder dan van .then tot en met }); */
                 msg.delete({ timeout: 12000 })
             });
     }
