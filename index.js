@@ -31,7 +31,7 @@ for (const file of commandFiles) {
 
 client.once('ready', () => {
     console.log('Deze bot is nu online')
-// Verander hieronder bij 'Deze bot' wat je de status van de bot wilt zijn, WATCHING staat voor kijkt naar.. je zou ook LISTENING kunnen gebruiken.
+    // Verander hieronder bij 'Deze bot' wat je de status van de bot wilt zijn, WATCHING staat voor kijkt naar.. je zou ook LISTENING kunnen gebruiken.
     client.user.setActivity('Deze bot', { type: "WATCHING" })
 });
 
@@ -40,11 +40,11 @@ client.on('message', message => {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
 
-/* Je kan hieronder commands toevoegen door na de } else if (command === 'NAAM') { client.commands.get('COMMANDO-NAAM').execute(message, args) } te gebruiken 
-of client.commands... weglaten en hier de codering neer zetten. Voor hulp contacteer: Oscar.#7370 */
+    /* Je kan hieronder commands toevoegen door na de } else if (command === 'NAAM') { client.commands.get('COMMANDO-NAAM').execute(message, args) } te gebruiken 
+    of client.commands... weglaten en hier de codering neer zetten. Voor hulp contacteer: Oscar.#7370 */
 
-    if  (command === 'ping') { 
-        message.channel.send('pong!'); 
+    if (command === 'ping') {
+        message.channel.send('pong!');
 
         /* Dit command doet niet veel.. is meer een test.. je kan ping veranderen in een ander command 
            en dan het bericht hierboven verwijderen en je eigen code invoegen */

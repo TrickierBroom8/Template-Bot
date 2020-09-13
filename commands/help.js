@@ -12,7 +12,7 @@ module.exports = {
             .addField("[Command1]", "Beschrijving van command1")
             .addField("[Command2]", "Beschrijving van command2")
 
-            // Als je een extra veld wilt toevoegen plak dit dan hierboven^^ .addField('', '')
+        // Als je een extra veld wilt toevoegen plak dit dan hierboven^^ .addField('', '')
 
 
         message.channel.send(E1952)
