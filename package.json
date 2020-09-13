@@ -1,7 +1,7 @@
 {
   "name": "template-bot",
   "version": "1.0.0",
-  "description": "template bot ",
+  "description": "Een lege bot.",
   "main": "index.js",
   "dependencies": {
     "discord.js": "^12.3.1",

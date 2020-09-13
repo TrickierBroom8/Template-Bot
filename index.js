@@ -14,6 +14,21 @@ if (config.token === 'HIER-JOUW-TOKEN') return console.log('De bot heeft geen ge
 
 if (prefix === 'HIER-JOUW-PREFIX') return console.log('Verander de prefix naar jouw eigen prefix.');
 
+// ^Dit^ Controleert of je jouw token en prefix wel hebt veranderd.. 
+
+client.commands = new Discord.Collection();
+
+// ^Dit^ Maakt een 'collectie' aan van commando's.. dus het mapje commands
+
+const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'))
+for (const file of commandFiles) {
+    const command = require(`./commands/${file}`);
+
+    client.commands.set(command.name, command);
+}
+
+// ^Dit^ Leest de uit of een bestand in het mapje commands wel eindigt met .js
+
 client.once('ready', () => {
     console.log('Deze bot is nu online')
 // Verander hieronder bij 'Deze bot' wat je de status van de bot wilt zijn, WATCHING staat voor kijkt naar.. je zou ook LISTENING kunnen gebruiken.
@@ -25,8 +40,8 @@ client.on('message', message => {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
 
-/* Je kan hieronder commands toevoegen door na de } else if (command === 'NAAM') { Codering } te gebruiken.
-   Voor hulp contacteer: Oscar.#7370 */
+/* Je kan hieronder commands toevoegen door na de } else if (command === 'NAAM') { client.commands.get('COMMANDO-NAAM').execute(message, args) } te gebruiken 
+of client.commands... weglaten en hier de codering neer zetten. Voor hulp contacteer: Oscar.#7370 */
 
     if  (command === 'ping') { 
         message.channel.send('pong!'); 
@@ -35,22 +50,8 @@ client.on('message', message => {
            en dan het bericht hierboven verwijderen en je eigen code invoegen */
 
     } else if (command === 'help') {
-        message.delete();
-
-        var E1952 = new Discord.MessageEmbed()
-            .setTitle('Commands:')
-            .addField("[Command1]", "Beschrijving van command1")
-            .addField("[Command2]", "Beschrijving van command2")
-
-            // Als je een extra veld wilt toevoegen plak dit dan hierboven^^ .addField('', '')
-
-
-        message.channel.send(E1952)
-            .then(msg => {
-                /* Dit bepaald na hoeveel seconden dit bericht word verwijderd.. in dit geval 12.. 
-                   Als je dit wilt uitschakellen verwijder dan van .then tot en met }); */
-                msg.delete({ timeout: 12000 })
-            });
+        client.commands.get('help').execute(message, args)
+        // De code van het help commando staat in /commands/help.js
     }
 });
 
