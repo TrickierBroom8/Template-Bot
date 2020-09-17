@@ -52,6 +52,10 @@ client.on('message', message => {
     } else if (command === 'help') {
         client.commands.get('help').execute(message, args)
         // De code van het help commando staat in /commands/help.js
+
+    } else if (command === 'HIER-JOUW-COMMANDO-NAAM') {
+        client.commands.get('HIER-JOUW-COMMANDO-NAAM').execute(message, args)
+
     }
 });
 
