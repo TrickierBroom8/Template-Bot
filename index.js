@@ -27,7 +27,7 @@ for (const file of commandFiles) {
     client.commands.set(command.name, command);
 }
 
-// ^Dit^ Leest de uit of een bestand in het mapje commands wel eindigt met .js
+// ^Dit^ Leest de commando's uit en of een bestand in het mapje commands wel eindigt met .js
 
 client.once('ready', () => {
     console.log('Deze bot is nu online')
