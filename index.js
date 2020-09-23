@@ -14,7 +14,7 @@ if (config.token === 'HIER-JOUW-TOKEN' && prefix === 'HIER-JOUW-PREFIX') return 
 
 if (config.token === 'HIER-JOUW-TOKEN') return console.log('De bot heeft geen geldige token\nVerander deze naar jouw eigen token');
 
-if (prefix === 'HIER-JOUW-PREFIX') return console.log('Verander de prefix naar jouw eigen prefix.');
+if (prefix === 'HIER-JOUW-PREFIX') return console.log('De bot heeft geen geldige prefix\nVerander de prefix naar jouw eigen prefix.');
 
 // ^Dit^ Controleert of je jouw token en prefix wel hebt veranderd.. 
 
