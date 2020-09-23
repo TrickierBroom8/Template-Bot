@@ -31,3 +31,5 @@ module.exports = {
 }
 
 en dan tussen de haakjes waar '// Voeg hier jouw code toe!' staat jouw code typen.
+
+[![Run on Repl.it](https://repl.it/badge/github/TrickierBroom8/Template-Bot)](https://repl.it/github/TrickierBroom8/Template-Bot)
