@@ -1,6 +1,8 @@
 // Verander geen van de volgende dingen zonder dat je weet wat je doet.. voor hulp kan je altijd Oscar.#7370 contacteren.
 const Discord = require('discord.js')
 
+const fs = require('fs');
+
 const client = new Discord.Client();
 
 const config = require('./config.json') /* Als je iets toe wilt voegen in de config, ga dan naar de config.json 
