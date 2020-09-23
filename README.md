@@ -11,15 +11,17 @@ In de index.js staan comments die je helpen.. als je hulp nodig hebt contacteer 
 
 Commands toevoegen: 
 
-    Als je commands wilt toevoegen moet je aan het einde van de else if lus, 
+Als je commands wilt toevoegen moet je aan het einde van de else if lus: 
+
     else if (command === 'COMMANDO-NAAM') { 
         client.commands.get('COMMANDO-NAAM').execute(message, args) 
-    } 
-    toevoegen.. daarna moet je naar het mapje commands gaan en hier een nieuw bestand aanmaken die COMMANDO-NAAM.js heet en daarin dit zetten: 
+    }
+    
+toevoegen.. daarna moet je naar het mapje commands gaan en hier een nieuw bestand aanmaken die COMMANDO-NAAM.js heet en daarin dit zetten: 
 
-const Discord = require('discord.js');
+    const Discord = require('discord.js');
 
-module.exports = {
+    module.exports = {
     name: 'COMMANDO-NAAM', // Zet hier de naam van jouw commando
     description: "COMMANDO-BESCHRIJVING", // Zet hier de beschrijving van jouw commando.. 
     execute(message, args) {
@@ -28,7 +30,7 @@ module.exports = {
 
     }
 
-}
+    }
 
 en dan tussen de haakjes waar '// Voeg hier jouw code toe!' staat jouw code typen.
 
