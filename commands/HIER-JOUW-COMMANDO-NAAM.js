@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 module.exports = {
-    name: 'HIER-JOUW-COMMANDO-NAAM', // Zet hier de naam van jouw commando
+    name: 'hier-jouw-commando-naam', // Zet hier de naam van jouw commando in lowercase (niet hoofdletters)
     description: "HIER-JOUW-COMMANDO-BESCHRIJVING", // Zet hier de beschrijving van jouw commando.. 
     execute(message, args) {
 

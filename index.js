@@ -18,7 +18,7 @@ if (prefix === 'HIER-JOUW-PREFIX') return console.log('De bot heeft geen geldige
 
 // ^Dit^ Controleert of je jouw token en prefix wel hebt veranderd.. 
 
-client.commands = new Discord.Collection();
+const cmap = new Discord.Collection();
 
 // ^Dit^ Maakt een 'collectie' aan van commando's.. dus het mapje commands
 
@@ -26,7 +26,7 @@ const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith(
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     console.log(`${file} geladen!`);
-    client.commands.set(command.name, command);
+    cmap.set(command.name, command);
 }
 
 // ^Dit^ Leest de commando's uit en of een bestand in het mapje commands wel eindigt met .js
@@ -42,23 +42,8 @@ client.on('message', message => {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
 
-    /* Je kan hieronder commands toevoegen door na de } else if (command === 'NAAM') { client.commands.get('COMMANDO-NAAM').execute(message, args) } te gebruiken 
-    of client.commands... weglaten en hier de codering neer zetten. Voor hulp contacteer: Oscar.#7370 */
-
-    if (command === 'ping') {
-        message.channel.send('pong!');
-
-        /* Dit command doet niet veel.. is meer een test.. je kan ping veranderen in een ander command 
-           en dan het bericht hierboven verwijderen en je eigen code invoegen */
-
-    } else if (command === 'help') {
-        client.commands.get('help').execute(message, args)
-        // De code van het help commando staat in /commands/help.js
-
-    } else if (command === 'HIER-JOUW-COMMANDO-NAAM') {
-        client.commands.get('HIER-JOUW-COMMANDO-NAAM').execute(message, args)
-
-    }
+    let commandFile = cmap.get(command); // Checkt of het commando ook echt een commando is
+    if (commandFile) commandFile.execute(message, args) // Als het een commando is dan voert hij dat uit
 });
 
 client.login(config.token)

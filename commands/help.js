@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 
 module.exports = {
-    name: 'help', // Zet hier de naam van jouw commando
-    description: "Stuurt een lijst van commando's", // Zet hier de beschrijving van jouw commando.. 
+    name: 'help', 
+    description: "Stuurt een lijst van commando's", 
     execute(message, args) {
 
         message.delete();
