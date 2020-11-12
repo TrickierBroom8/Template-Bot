@@ -1,6 +1,8 @@
 // Verander geen van de volgende dingen zonder dat je weet wat je doet.. voor hulp kan je altijd Oscar.#7370 contacteren.
 const Discord = require('discord.js')
 
+const fs = require('fs');
+
 const client = new Discord.Client();
 
 const config = require('./config.json') /* Als je iets toe wilt voegen in de config, ga dan naar de config.json 
@@ -12,7 +14,7 @@ if (config.token === 'HIER-JOUW-TOKEN' && prefix === 'HIER-JOUW-PREFIX') return 
 
 if (config.token === 'HIER-JOUW-TOKEN') return console.log('De bot heeft geen geldige token\nVerander deze naar jouw eigen token');
 
-if (prefix === 'HIER-JOUW-PREFIX') return console.log('Verander de prefix naar jouw eigen prefix.');
+if (prefix === 'HIER-JOUW-PREFIX') return console.log('De bot heeft geen geldige prefix\nVerander de prefix naar jouw eigen prefix.');
 
 // ^Dit^ Controleert of je jouw token en prefix wel hebt veranderd.. 
 
