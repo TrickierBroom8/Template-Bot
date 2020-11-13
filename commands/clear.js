@@ -4,6 +4,11 @@ module.exports = {
     async execute(message, args) {
 
         message.delete() // Verwijderd het eerste bericht
+        
+        if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('Je hebt geen toestemming'); // Kijkt of je wel toestemming hebt
+        
+        if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.channel.send('Ik kan deze berichten niet verwijderen.. ik mis permissie: [\'MANAGE MESSAGES\']').then(msg => { msg.delete({ timeout: 7500 }) });
+        // Kijkt of de bot wel berichten kan verwijderen..
 
         if (!args[0]) return message.channel.send('Geef een nummer op'); // Kijkt of er wel argumenten zijn meegegeven ?clear args[0]
 
